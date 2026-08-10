@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root { --ink:#20322d; --muted:#687871; --cream:#f7f5ef; --paper:#fffefa; --teal:#176b5b; --teal-soft:#dcece6; --lime:#dceaa4; --line:#dde3dd; --amber:#f3d99b; }
+* { box-sizing: border-box; }
+html { background:var(--cream); color:var(--ink); }
+body { margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; background:radial-gradient(circle at 80% 0%,#e7f0e7 0,transparent 25rem),var(--cream); }
+button,a,input { font:inherit; }
+button,a { -webkit-tap-highlight-color:transparent; }
+:focus-visible { outline:3px solid #efb84b; outline-offset:3px; }
+.serif { font-family:Georgia,"Times New Roman",serif; }
+.card { background:rgba(255,254,250,.92); border:1px solid var(--line); border-radius:18px; box-shadow:0 8px 30px rgba(39,61,54,.055); }
+.pill { display:inline-flex; align-items:center; gap:.4rem; border-radius:999px; padding:.38rem .7rem; font-size:.76rem; font-weight:700; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; min-height:42px; border-radius:11px; padding:.65rem 1rem; font-weight:700; cursor:pointer; transition:.18s ease; border:1px solid transparent; }
+.btn:hover { transform:translateY(-1px); }
+.btn-primary { color:white; background:var(--teal); box-shadow:0 5px 15px rgba(23,107,91,.18); }
+.btn-ghost { color:var(--ink); border-color:var(--line); background:white; }
+.check { width:20px;height:20px;accent-color:var(--teal); }
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
