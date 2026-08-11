@@ -1,4 +1,10 @@
-import type { Activity, Indicator, Objective, Skill, Student } from "@/domain/types";
+import type { Activity, Indicator, InstitutionalDocument, Objective, Skill, Student } from "@/domain/types";
+
+export const institutionalDocuments: InstitutionalDocument[] = [
+  { type: "PEI", name: "Plano Educacional Individualizado", description: "Opção demonstrativa para organizar um planejamento educacional individualizado conforme as práticas da instituição.", caution: "A finalidade, a composição e a nomenclatura devem ser confirmadas pela equipe responsável." },
+  { type: "PDI", name: "Plano de Desenvolvimento Individual", description: "Opção demonstrativa para instituições que adotam um plano de desenvolvimento individual em seu percurso próprio.", caution: "Não é apresentado como sinônimo do PEI nem como reprodução de um formulário institucional." },
+  { type: "PAEE", name: "Plano de Atendimento Educacional Especializado", description: "Opção demonstrativa para organizar discussões relacionadas ao atendimento educacional especializado.", caution: "Seu escopo deve ser definido pelo profissional e pelas regras aplicáveis à instituição." },
+];
 
 export const students: Student[] = [
   { id: "lia", name: "Lia Monteiro", initials: "LM", age: "8 anos", context: "2º ano · acompanhamento escolar", lastUpdate: "Hoje, 09:40" },

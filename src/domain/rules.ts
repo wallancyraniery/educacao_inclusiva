@@ -1,4 +1,4 @@
-import type { Activity, Indicator, Objective, Skill } from "./types";
+import type { Activity, Indicator, Objective, Skill, SuggestionDecision } from "./types";
 
 export const skillsForIndicators = (selected: string[], allSkills: Skill[]) =>
   allSkills.filter((skill) => skill.indicatorIds.some((id) => selected.includes(id)));
@@ -14,3 +14,9 @@ export const activitiesForObjectives = (selected: string[], allActivities: Activ
 
 export const indicatorsByArea = (allIndicators: Indicator[]) =>
   Object.groupBy(allIndicators, (indicator) => indicator.area);
+
+export const decideSuggestion = (
+  decisions: Record<string, SuggestionDecision>,
+  suggestionId: string,
+  decision: Exclude<SuggestionDecision, "pending">,
+) => ({ ...decisions, [suggestionId]: decision });

@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { Icon } from "./icons";
 
 const nav = [{href:"/",label:"Visão geral",icon:"home"},{href:"/estudantes",label:"Estudantes",icon:"users"},{href:"/avaliacao",label:"Avaliações",icon:"file"},{href:"/atividades",label:"Atividades",icon:"book"}];
-const steps = [{href:"/avaliacao",label:"Avaliação"},{href:"/indicadores",label:"Indicadores"},{href:"/habilidades",label:"Habilidades"},{href:"/objetivos",label:"Objetivos"},{href:"/atividades",label:"Atividades"},{href:"/pei",label:"PEI"}];
+const steps = [{href:"/avaliacao",label:"Avaliação"},{href:"/indicadores",label:"Indicadores"},{href:"/habilidades",label:"Habilidades"},{href:"/objetivos",label:"Objetivos"},{href:"/atividades",label:"Atividades"},{href:"/pei",label:"Documento"}];
 
 export function AppShell({ children }: { children:React.ReactNode }) {
  const path=usePathname(); const activeStep=steps.findIndex((s)=>path.startsWith(s.href));

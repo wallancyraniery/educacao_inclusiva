@@ -10,9 +10,9 @@ Investigar se um fluxo assistido pode reduzir o intervalo entre o registro de um
 
 Profissionais precisam transformar resultados observados em decisões aplicáveis. A demonstração torna explícito o caminho:
 
-**Avaliação → Indicadores → Habilidades → Objetivos → Atividades → Prévia do PEI**
+**Avaliação → Indicadores → Habilidades → Objetivos → Atividades → Documento institucional**
 
-As associações são regras locais, puras e transparentes. O sistema apresenta possibilidades; a escolha permanece com o profissional.
+As associações são regras locais, puras e transparentes. Indicadores, objetivos e atividades são sugestões para análise: o profissional pode selecionar, editar ou rejeitar no estado efêmero da demonstração. Na etapa final, PEI, PDI e PAEE aparecem como tipos distintos e configuráveis, sem pressupor equivalência de estrutura ou finalidade.
 
 ## Stack
 
@@ -41,6 +41,7 @@ npm run typecheck
 npm run lint
 npm test
 npm run build
+npm audit
 ```
 
 Os testes cobrem associações entre resultados, habilidades, objetivos e atividades, seleção de objetivos e filtragem das atividades.
@@ -58,7 +59,7 @@ Os testes cobrem associações entre resultados, habilidades, objetivos e ativid
 | `/objetivos` | Seleção de objetivos |
 | `/atividades` | Banco e seleção de atividades |
 | `/atividades/a1` | Detalhes de uma atividade |
-| `/pei` | Construção assistida da prévia |
+| `/pei` | Seleção entre PEI, PDI e PAEE e composição demonstrativa da prévia |
 | `/resumo` | Resumo do caminho percorrido |
 
 ## Organização do código
@@ -72,7 +73,7 @@ Os testes cobrem associações entre resultados, habilidades, objetivos e ativid
 
 Todos os nomes, contextos, avaliações e perfis são fictícios. As atividades são originais, demonstrativas e ainda não foram validadas profissionalmente. Não há itens de instrumentos oficiais, conteúdo de planilhas comerciais, materiais internos de concorrentes, diagnósticos, informações clínicas ou documentos pessoais.
 
-A ferramenta apoia, mas não substitui, a decisão do profissional. A prévia do PEI não é documento definitivo e não representa promessa clínica, diagnóstica ou legal.
+A ferramenta apoia, mas não substitui, a decisão do profissional. As prévias de PEI, PDI ou PAEE não são documentos definitivos, não reproduzem formulários oficiais e não representam promessa clínica, diagnóstica ou legal. Os três tipos não são tratados como sinônimos; finalidade, estrutura, nomenclatura e aplicação precisam ser confirmadas no contexto institucional.
 
 Por decisão de escopo, não foram implementados banco de dados, autenticação, autorização, automações generativas, serviços externos, uploads, pagamentos, analytics, e-mail, PDF definitivo, deploy ou repositório remoto. O estado das escolhas é efêmero e reinicia ao recarregar algumas páginas.
 
