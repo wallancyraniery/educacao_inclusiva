@@ -44,7 +44,7 @@ npm run build
 npm audit
 ```
 
-Os testes cobrem associações entre resultados, habilidades, objetivos e atividades, seleção de objetivos e filtragem das atividades.
+Os testes cobrem associações, filtros isolados e combinados, estado vazio, variações de complexidade, metadados obrigatórios e a barreira editorial contra sugestões sem autoria, licença, versão ou estado editorial.
 
 ## Rotas
 
@@ -69,13 +69,21 @@ Os testes cobrem associações entre resultados, habilidades, objetivos e ativid
 - `src/domain`: tipos e regras puras de associação
 - `src/data`: dados locais fictícios e atividades autorais demonstrativas
 
+## Banco demonstrativo de atividades
+
+A amostra local reúne 12 atividades inteiramente originais e não validadas profissionalmente: três de comunicação e expressão, três de interação e participação, três de autonomia e rotina e três de habilidades acadêmicas funcionais. Ela serve para testar o modelo de informação e a experiência de análise; não é catálogo prescritivo nem recomendação definitiva.
+
+Cada atividade registra identificador, título, descrição, finalidade, habilidades e objetivos relacionados, contexto, etapa apenas indicativa, modalidade, materiais, duração, apoio, complexidade e eventuais variações. Também explicita adaptações, acessibilidade, orientações, elementos a observar, registro de resultados, próximos passos, autoria, licença, estado editorial, versão e data de revisão.
+
+Na rota `/atividades`, os filtros por habilidade, objetivo, contexto, modalidade, complexidade, adaptação e acessibilidade são combinados com lógica **E**. Se nenhum item atender a todos os critérios, o estado vazio mantém os filtros visíveis e não inventa resultados nem remove escolhas. Filtros e decisões são compartilhados entre catálogo e detalhes durante a navegação. Selecionar ou rejeitar é sempre uma ação explícita do profissional e permanece somente na memória da sessão, sendo reiniciado ao atualizar a página.
+
 ## Limitações e segurança do conteúdo
 
 Todos os nomes, contextos, avaliações e perfis são fictícios. As atividades são originais, demonstrativas e ainda não foram validadas profissionalmente. Não há itens de instrumentos oficiais, conteúdo de planilhas comerciais, materiais internos de concorrentes, diagnósticos, informações clínicas ou documentos pessoais.
 
 A ferramenta apoia, mas não substitui, a decisão do profissional. As prévias de PEI, PDI ou PAEE não são documentos definitivos, não reproduzem formulários oficiais e não representam promessa clínica, diagnóstica ou legal. Os três tipos não são tratados como sinônimos; finalidade, estrutura, nomenclatura e aplicação precisam ser confirmadas no contexto institucional.
 
-Por decisão de escopo, não foram implementados banco de dados, autenticação, autorização, automações generativas, serviços externos, uploads, pagamentos, analytics, e-mail, PDF definitivo, deploy ou repositório remoto. O estado das escolhas é efêmero e reinicia ao recarregar algumas páginas.
+Por decisão de escopo, não foram implementados banco de dados, autenticação, autorização, IA, API, impressão, PDF, assinatura, compartilhamento, deploy, integrações, uploads, pagamentos, analytics ou e-mail. O estado das escolhas é local e efêmero e reinicia ao recarregar as páginas. A demonstração não usa diagnóstico como regra automática, não contém dados reais e não reproduz Inventário Portage ou qualquer conteúdo protegido.
 
 ## Decisões a validar com o profissional parceiro
 
