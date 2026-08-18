@@ -2,9 +2,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon } from "./icons";
+import { PreviousStepLink } from "./ui";
 
 const nav = [{href:"/",label:"Visão geral",icon:"home"},{href:"/estudantes",label:"Estudantes",icon:"users"},{href:"/avaliacao",label:"Avaliações",icon:"file"},{href:"/atividades",label:"Atividades",icon:"book"}];
 const steps = [{href:"/avaliacao",label:"Avaliação"},{href:"/indicadores",label:"Indicadores"},{href:"/habilidades",label:"Habilidades"},{href:"/objetivos",label:"Objetivos"},{href:"/atividades",label:"Atividades"},{href:"/pei",label:"Documento"}];
+export const previousSteps:Record<string,{href:string;label:string}>={"/indicadores":{href:"/avaliacao",label:"Voltar para avaliação"},"/habilidades":{href:"/indicadores",label:"Voltar para indicadores"},"/objetivos":{href:"/habilidades",label:"Voltar para habilidades"},"/atividades":{href:"/objetivos",label:"Voltar para objetivos"},"/pei":{href:"/atividades",label:"Voltar para atividades"}};
 
 export function AppShell({ children }: { children:React.ReactNode }) {
  const path=usePathname(); const activeStep=steps.findIndex((s)=>path.startsWith(s.href));
@@ -17,6 +19,6 @@ export function AppShell({ children }: { children:React.ReactNode }) {
   <div className="min-w-0"><header className="sticky top-0 z-20 border-b border-[#dde3dd] bg-[#f7f5ef]/90 backdrop-blur-xl">
    <div className="flex h-16 items-center justify-between px-5 md:px-8"><Link href="/" className="flex items-center gap-2 lg:hidden"><span className="grid h-9 w-9 place-items-center rounded-xl bg-[#176b5b] text-white"><Icon name="layers"/></span><strong className="serif">Percurso</strong></Link><div className="hidden lg:block text-sm text-[#687871]">Espaço de planejamento educacional</div><div className="flex items-center gap-3"><span className="pill bg-[#f3e7bd] text-[#735c19]">Demonstração</span><span className="grid h-9 w-9 place-items-center rounded-full bg-[#284a40] text-xs font-bold text-white">MP</span></div></div>
    {activeStep>=0&&<div className="overflow-x-auto border-t border-[#e6e8e3] px-5 md:px-8"><ol className="mx-auto flex min-w-max max-w-5xl items-center py-3" aria-label="Etapas do percurso">{steps.map((s,i)=><li key={s.href} className="flex items-center"><Link href={s.href} className={`flex items-center gap-2 text-xs font-bold ${i<=activeStep?"text-[#176b5b]":"text-[#8a958f]"}`}><span className={`grid h-6 w-6 place-items-center rounded-full ${i<activeStep?"bg-[#176b5b] text-white":i===activeStep?"border-2 border-[#176b5b] bg-white":"bg-[#e4e7e2]"}`}>{i<activeStep?<Icon name="check" size={14}/>:i+1}</span>{s.label}</Link>{i<steps.length-1&&<span className={`mx-2 h-px w-7 md:w-10 ${i<activeStep?"bg-[#176b5b]":"bg-[#d4d9d4]"}`}/>}</li>)}</ol></div>}
-  </header><main className="mx-auto max-w-[1280px] p-5 pb-24 md:p-8">{children}</main></div>
+  </header><main className="mx-auto max-w-[1280px] p-5 pb-24 md:p-8">{previousSteps[path]&&<div className="mb-5"><PreviousStepLink {...previousSteps[path]}/></div>}{children}</main></div>
  </div>;
 }

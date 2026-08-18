@@ -11,11 +11,15 @@ type ActivitySession = {
   setFilters: React.Dispatch<React.SetStateAction<ActivityFilters>>;
 };
 
+export type ActivitySessionState = Pick<ActivitySession, "decisions" | "filters">;
+
+export const createActivitySessionState = (): ActivitySessionState => ({ decisions: {}, filters: {} });
+
 const ActivitySessionContext = createContext<ActivitySession | null>(null);
 
-export function ActivitySessionProvider({ children }: { children: React.ReactNode }) {
-  const [decisions, setDecisions] = useState<Record<string, SuggestionDecision>>({});
-  const [filters, setFilters] = useState<ActivityFilters>({});
+export function ActivitySessionProvider({ children, initialState }: { children: React.ReactNode; initialState?: ActivitySessionState }) {
+  const [decisions, setDecisions] = useState<Record<string, SuggestionDecision>>(() => initialState?.decisions ?? {});
+  const [filters, setFilters] = useState<ActivityFilters>(() => initialState?.filters ?? {});
   const decide = (activityId: string, decision: "selected" | "rejected") =>
     setDecisions((current) => decideSuggestion(current, activityId, decision));
 
