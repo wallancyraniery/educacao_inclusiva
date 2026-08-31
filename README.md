@@ -1,10 +1,31 @@
-# Percurso — protótipo educacional
+# Percurso — Educação Inclusiva
 
-Protótipo visual navegável criado para a etapa **PRC-026 — Identificar Oportunidade de Produto** da Improve. A identidade “Percurso” é provisória e não representa uma definição comercial.
+Protótipo de produto digital em fase de **Discovery** para investigar como apoiar profissionais da educação inclusiva na transformação de avaliações em planejamento de ações educacionais.
+
+O projeto explora um percurso assistido e transparente:
+
+**Avaliação → Indicadores → Habilidades → Objetivos → Atividades → Documento institucional**
+
+A solução foi construída como protótipo navegável para validar o problema, o fluxo e o modelo conceitual com profissionais antes de decisões de arquitetura de produção. O desenvolvimento combina modelagem de domínio, regras de associação explícitas, interface navegável e testes automatizados.
+
+> **Estado atual:** protótipo em Discovery. Os dados são fictícios e as sugestões demonstrativas. O projeto ainda passará por etapas de validação com profissionais antes da definição de uma solução de produção.
+
+## Competências demonstradas
+
+- Desenvolvimento com Next.js, React e TypeScript em modo estrito
+- Modelagem de domínio e regras de negócio puras e transparentes
+- Organização de componentes, dados e experiências por responsabilidade
+- Testes automatizados com Vitest
+- Construção orientada por Discovery e validação de hipóteses
+- Tratamento explícito de limitações, autoria, acessibilidade e segurança de conteúdo
+
+## Contexto do Discovery
+
+O protótipo foi criado para a etapa **PRC-026 — Identificar Oportunidade de Produto** da Improve. A identidade “Percurso” é provisória e não representa uma definição comercial.
 
 ## Objetivo
 
-Investigar se um fluxo assistido pode reduzir o intervalo entre o registro de uma avaliação do desenvolvimento e o planejamento de ações educacionais. O protótipo foi feito para uma sessão de Discovery com o profissional parceiro e outros profissionais, permitindo encontrar erros de compreensão antes de qualquer arquitetura de produção.
+Investigar se um fluxo assistido pode reduzir o intervalo entre o registro de uma avaliação do desenvolvimento e o planejamento de ações educacionais. O protótipo foi feito para sessões de Discovery com o profissional parceiro e outros profissionais, permitindo encontrar erros de compreensão antes de qualquer arquitetura de produção.
 
 ## Problema investigado e fluxo
 
@@ -85,9 +106,9 @@ A ferramenta apoia, mas não substitui, a decisão do profissional. As prévias 
 
 Por decisão de escopo, não foram implementados banco de dados, autenticação, autorização, IA, API, impressão, PDF, assinatura, compartilhamento, deploy, integrações, uploads, pagamentos, analytics ou e-mail. O estado das escolhas é local e efêmero e reinicia ao recarregar as páginas. A demonstração não usa diagnóstico como regra automática, não contém dados reais e não reproduz Inventário Portage ou qualquer conteúdo protegido.
 
-## Decisões a validar com o profissional parceiro
+## Decisões a validar com os profissionais
 
-- Se a sequência proposta representa o raciocínio real do profissional.
+- Se a sequência proposta representa o raciocínio real dos profissionais.
 - Quais informações mínimas de uma avaliação devem chegar aos indicadores.
 - Se as cinco áreas genéricas ajudam ou restringem o planejamento.
 - Como explicar as associações sem sugerir automatismo ou prescrição.
@@ -96,6 +117,6 @@ Por decisão de escopo, não foram implementados banco de dados, autenticação,
 - Qual participação de estudante, família e equipe deve aparecer no PEI.
 - Quais responsabilidades de revisão e autoria precisam ficar visíveis.
 
-## Próximos passos após o Discovery
+## Próximos passos do Discovery
 
-Conduzir uma sessão moderada, registrar pontos de hesitação e divergências, revisar o modelo conceitual e priorizar hipóteses. Somente depois disso avaliar arquitetura de produção, modelo de dados, governança de conteúdo, acessibilidade aprofundada, privacidade e requisitos legais.
+Consolidar a coleta com os profissionais, conduzir as etapas de validação previstas, registrar pontos de hesitação e divergências, revisar o modelo conceitual e priorizar hipóteses. Somente depois disso avaliar arquitetura de produção, modelo de dados, governança de conteúdo, acessibilidade aprofundada, privacidade e requisitos legais.
