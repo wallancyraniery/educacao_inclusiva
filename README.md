@@ -21,7 +21,7 @@ A solução foi construída como protótipo navegável para validar o problema, 
 
 ## Contexto do Discovery
 
-O protótipo foi criado para a etapa **PRC-026 — Identificar Oportunidade de Produto** da Improve. A identidade “Percurso” é provisória e não representa uma definição comercial.
+O protótipo foi desenvolvido durante uma etapa de descoberta e validação de oportunidade de produto. A identidade “Percurso” é provisória e não representa uma definição comercial.
 
 ## Objetivo
 
